@@ -1,0 +1,518 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+    <meta charset="UTF-8">
+    <title>个人网站——首页</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/shouye.css">
+    <link rel="stylesheet" href="css/shange.css">
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="css/sim-prev-anim.css" rel="stylesheet" type="text/css" />
+    <!--<link rel="stylesheet" href="css/index.css"/>-->
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+
+
+    <!--<script src="js/jquery-3.1.0.js"></script>-->
+    <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+    <script type="text/javascript" src="js/swiper-3.4.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.corner.js"></script>
+    <script type="text/javascript" src="js/jquery.roundabout.js"></script>
+    <script type="text/javascript" src="js/jquery.roundabout-shapes.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#fullpage').fullpage({
+                //Navigation
+                menu: '#menu',
+                lockAnchors: false,
+                anchors: ['firstPage', 'secondPage', 'thirdPage', 'forthPage'],
+                navigation: false,
+                navigationPosition: 'right',
+                navigationTooltips: ['firstSlide', 'secondSlide', 'thirdSlide', 'forthSlide'],
+                showActiveTooltip: false,
+                slidesNavigation: false,
+                slidesNavPosition: 'bottom',
+
+                //Scrolling
+                css3: true,
+                scrollingSpeed: 700,
+                autoScrolling: true,
+                fitToSection: true,
+                fitToSectionDelay: 1000,
+                scrollBar: false,
+                easing: 'easeInOutCubic',
+                easingcss3: 'ease',
+                loopBottom: false,
+                loopTop: false,
+                loopHorizontal: true,
+                continuousVertical: false,
+                continuousHorizontal: false,
+                scrollHorizontally: false,
+                interlockedSlides: false,
+                dragAndMove: false,
+                offsetSections: false,
+                resetSliders: false,
+                fadingEffect: false,
+                normalScrollElements: '#element1, .element2',
+                scrollOverflow: false,
+                scrollOverflowReset: false,
+                scrollOverflowOptions: null,
+                touchSensitivity: 15,
+                normalScrollElementTouchThreshold: 5,
+                bigSectionsDestination: null,
+
+                //Accessibility
+                keyboardScrolling: true,
+                animateAnchor: true,
+                recordHistory: true,
+
+                //Design
+                controlArrows: true,
+                verticalCentered: true,
+                sectionsColor: ['#ccc', '#fff'],
+                paddingTop: '3em',
+                paddingBottom: '10px',
+                fixedElements: '#header, .footer',
+                responsiveWidth: 0,
+                responsiveHeight: 0,
+                responsiveSlides: false,
+                parallax: false,
+                parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+
+                //Custom selectors
+                sectionSelector: '.section',
+                slideSelector: '.slide',
+
+                lazyLoading: true,
+
+                //events
+                onLeave: function (index, nextIndex, direction) {
+                },
+                afterLoad: function (anchorLink, index) {
+                },
+                afterRender: function () {
+                },
+                afterResize: function () {
+                },
+                afterResponsive: function (isResponsive) {
+                },
+                afterSlideLoad: function (anchorLink, index, slideAnchor, slideIndex) {
+                },
+                onSlideLeave: function (anchorLink, index, slideIndex, direction, nextSlideIndex) {
+                }
+            });
+        });
+    </script>
+
+    <script>
+        $(function () {
+            $('.nav_box').hover(
+                    function () {
+                        $(this).find('b').show();
+                        $(this).find('.inbox').show();
+                    },
+                    function () {
+                        $(this).find('b').hide();
+                        $(this).find('.inbox').hide();
+                    }
+            );
+            $('.nav_box').each(function (index, element) {
+                $(this).find('span').eq(1).css({color: '#fff'});
+            }).last().css({'border-right': 'none'});
+            $('#footer').corner('4px');
+            if ($('#gla')) {
+                $('.gla_inbox').corner('8px');
+                $('#gla_box>ul').roundabout({
+                    minOpacity: 1,
+                    btnNext: ".next",
+                    duration: 1000,
+                    reflect: true,
+                    btnPrev: '.prev',
+                    autoplay: true,
+                    autoplayDuration: 5000,
+                    tilt: 0,
+                    shape: 'figure8'
+                });
+            }
+            $('#sidebar li').eq(0).css({'border-top-color': ''});
+            $('#sidebar li').each(function (index) {
+                $(this).hover(
+                        function () {
+                            $(this).addClass('li_hover').find('a').css({'color': '#03F'});
+                        },
+                        function () {
+                            $(this).removeClass('li_hover').find('a').css({'color': '#fff'});
+                        }
+                );
+            });
+            $('.con li:even').css({'background': '#f8fbfc'});
+        });
+    </script>
+</head>
+
+<body>
+<div class="daohang-box">
+    <div class="daohang">
+        <ul>
+            <li><a href="shouye.html">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li></li>
+            <li><a href="#work">WORK</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+        <div class="logotu"><img src="img/logo.png" alt=""></div>
+    </div>
+
+
+    <div class="daohang-small">
+        <ul>
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li>WORK</li>
+            <li>CONTACT</li>
+        </ul>
+    </div>
+</div>
+<div class="col-lg-12 col-sm-12 col-xs-12 box">
+    <div class="col-lg-12 col-sm-12 col-xs-12 bigbox" id="fullpage">
+        <div class="smallbox">
+            <div class="banner section swiper-container">
+                <div class="banner-tu swiper-wrapper">
+                    <img src="img/sdd.jpg" alt="" class="swiper-slide">
+                    <img src="img/sdd1.jpg" alt="" class="swiper-slide">
+                    <img src="img/sdd2.jpg" alt="" class="swiper-slide">
+                </div>
+                <div class="banner-mask"></div>
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+            <!-- about -->
+            <div id="about" class="work section">
+                <div class="container">
+                    <span class="left-icon"> </span>
+                    <span class="work-zi">ABOUT</span>
+                    <span class="right-icon"> </span>
+                </div>
+
+                <div id="banner-top" class="banner-top">
+                    <div class="title">
+                        <div class="qdgcs">
+                            前端工程师
+                        </div>
+                    </div>
+                    <div class="subtitle">
+                        UI&UX DESIGNER
+                    </div>
+                </div>
+
+                <div id="banner-top-small" class="banner-top-small">
+                    <div class="title">
+                        <span class="emrah">前端工程师</span>
+                    </div>
+                    <div class="subtitle">
+                        UI&UX DESIGNER
+                    </div>
+                </div>
+
+                <div class="jieshao">
+                    <span style="color: #B6552C;">姓名：梁湘珺</span><br>
+                    <span>学校：山西省财政税务专科学校</span><br>
+                    <span>专业：计算机应用技术</span><br>
+                    <span>技能：PS、AI、界面设计、HTML、CSS、JS</span>
+                </div>
+
+
+                <ul class="icon">
+                    <li class="icon-ps"></li>
+                    <li class="icon-ai"></li>
+                    <li class="icon-icon-test"></li>
+                    <li class="icon-CSS"></li>
+                    <li class="icon-JS"></li>
+                    <li class="icon-image-icon_php" style="margin-right: 0;"></li>
+                </ul>
+
+
+                <ul class="icon-small">
+                    <li class="icon-ps" style="margin-bottom: 5px;"></li>
+                    <li class="icon-ai" style="margin-bottom: 5px;"></li>
+                    <li class="icon-icon-test" style="margin-right: 0;margin-bottom: 5px;"></li>
+                    <li class="icon-CSS"></li>
+                    <li class="icon-JS"></li>
+                    <li class="icon-image-icon_php" style="margin-right: 0;"></li>
+                </ul>
+
+            </div>
+            <!--about结束-->
+
+            <div id="work" class="work section">
+                <div class="container">
+                    <span class="left-icon"> </span>
+                    <span class="work-zi" style="position:relative;z-index: 999;">WORK</span>
+                    <span class="right-icon"> </span>
+                </div>
+                <div class="work1-ps-box slide">
+                    <div class="work3-h5">
+                        <div id="sq">
+                            <div id="gla">
+                                <div id="gla_box">
+                                    <ul>
+                                        <li>
+                                            <div class="gla_inbox">
+                                                <a href="fk/index.html" title="凡客官网">
+                                                    <img src="img/fklogo.jpg"/>
+                                                </a>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="gla_inbox">
+                                                <a href="xm/index.html" title="小米官网">
+                                                    <img src="img/xmlogo.jpg"/>
+                                                </a>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="gla_inbox" title="天猫官网">
+                                                <a href="tmgw/index.html">
+                                                    <img src="img/tmlogo.jpg"/>
+                                                </a>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="gla_inbox">
+                                                <a href="jd/index.html" title="京东官网">
+                                                    <img src="img/jdlogo.jpg"/>
+                                                </a>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="gla_inbox">
+                                                <a href="zgyd/index.html" title="移动官网">
+                                                    <img src="img/ydlogo.jpg"/>
+                                                </a>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="gla_inbox">
+                                                <a href="sfw/index.html" title="沙发网">
+                                                    <img src="img/sfwlogo.jpg"/>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="gla_inbox">
+                                                <a href="pg/index.html" title="苹果官网">
+                                                    <img src="img/pglogo.jpg"/>
+                                                </a>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="gla_inbox">
+                                                <a href="ms/index.html" title="美食">
+                                                    <img src="img/mslogo.jpg"/>
+                                                </a>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="gla_inbox">
+                                                <a href="tmyd/tianmao.html" title="天猫移动官网">
+                                                    <img src="img/tmydlogo.jpg"/>
+                                                </a>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="gla_inbox">
+                                                <a href="uek/index.html" title="优异课">
+                                                    <img src="img/ueklogo.jpg"/>
+                                                </a>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+                <div class="work1-ps-box slide">
+                    <div class="work1-ps">
+                        <div class="ps-bottom">
+                            <ul class="h5-bottom">
+                                <li class="dzyx">
+                                    <a href="daziyouxi/index.html">
+                                        <div class="zhezhao">
+                                            <div class="more">打字游戏</div>
+                                            <img src="img/logo.png" alt="" class="imglogo">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="slyx">
+                                    <a href="slyx/index.html"><div class="zhezhao">
+                                        <div class="more">扫雷游戏</div>
+                                        <img src="img/logo.png" alt="" class="imglogo">
+                                    </div>
+                                    </a>
+                                </li>
+                                <li class="todolist">
+                                    <a href="todolist/index.html"><div class="zhezhao">
+                                        <div class="more">TO DO LIST</div>
+                                        <img src="img/logo.png" alt="" class="imglogo">
+                                    </div>
+                                    </a>
+                                </li>
+                                <li class="hb">
+                                    <a href="hb/index.html"><div class="zhezhao">
+                                        <div class="more">画板</div>
+                                        <img src="img/logo.png" alt="" class="imglogo">
+                                    </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+                    <!-- contact开始 -->
+                    <div id="contact" class="work content1 section">
+                        <div class="container">
+                            <span class="left-icon"> </span>
+                            <span class="work-zi">CONTACT</span>
+                            <span class="right-icon"> </span>
+                        </div>
+
+                        <div class="contact-bottom">
+
+                            <div class="contact-kuang">
+
+                                <div class="contact-form">
+                                    <ul class="form">
+                                        <li>
+                                            <input type="text" class="text" value="Name*">
+                                        </li>
+                                        <li>
+                                            <input type="text" class="text" value="Email*">
+                                        </li>
+                                        <li>
+                                            <textarea cols="22" rows="7" class="text" value=Message*></textarea>
+                                        </li>
+                                        <div class="sub-button">
+                                            <input type="submit" value="SEND">
+                                        </div>
+                                    </ul>
+                                </div>
+
+                                <ul class="bottom-bottom">
+                                    <li class="address">
+                                        <img src="img/address.png" alt="">
+                                        <span class="mask" style="padding-top: 1px;">山西省财政税务专科学校</span>
+                                    </li>
+                                    <li class="qq">
+                                        <img src="img/QQ.png" alt="">
+                                        <spanspan class="mask">1632546754</spanspan>
+                                    </li>
+                                    <li class="tel">
+                                        <img src="img/telphone.png" alt="">
+                                        <span class="mask">15623457895</span>
+                                    </li>
+                                    <li class="weixin">
+                                        <img src="img/weixin.png" alt="">
+                                        <span class="mask">MMD_MMD</span>
+                                    </li>
+                                    <li class="weibo">
+                                        <img src="img/weibo.png" alt="">
+                                        <span class="mask">15623457895</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="contact-kuang-small">
+                                <div class="contact-form-small">
+                                    <ul class="form-small">
+                                        <li>
+                                            <input type="text1" class="text" value="Name*">
+                                        </li>
+                                        <li>
+                                            <input type="text1" class="text" value="Email*">
+                                        </li>
+                                        <li>
+                                    <textarea name="" id="" cols="22" rows="7" value="Message*"
+                                              class="message">Message*</textarea>
+                                        </li>
+                                        <div class="sub-button-small">
+                                            <input type="submit" value="SEND" class="btn">
+                                        </div>
+                                    </ul>
+                                </div>
+                                <div class="bottom-bottom-small">
+                                    <div class="address">
+                                        <img src="img/address.png" alt="">
+                                    </div>
+                                    <div class="qq">
+                                        <img src="img/QQ.png" alt="">
+                                    </div>
+                                    <div class="tel">
+                                        <img src="img/telphone.png" alt="">
+                                    </div>
+                                    <div class="weixin">
+                                        <img src="img/weixin.png" alt="">
+                                    </div>
+                                    <div class="weibo">
+                                        <img src="img/weibo.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- contact结束 -->
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="dy"></div>
+
+        <div class="fixedtu">
+            <a href="shouye.html"><img src="img/top-arrow.png" alt=""></a>
+        </div>
+</body>
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 3000,
+        autoplayDisableOnInteraction: false
+    });
+</script>
+<script>
+    $(".fixedtu").click(function(){
+        $("html,body").animate({scrollTop:0},500);
+    })
+</script>
+
+</html>

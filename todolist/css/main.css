@@ -1,0 +1,110 @@
+html,body{
+    margin:0;
+    border:0;
+    height:100%;
+    overflow:hidden;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    list-style: none;
+}
+
+.scene{
+    width: 1000px;
+    height:100%;
+    margin:0 auto;
+    position: relative;
+    background: url('../img/bg.png');
+}
+
+.main{
+    width: 800px;
+    height:100%;
+    float: left;
+    position: relative;
+}
+
+.control{
+    width: 200px;
+    height: 100%;
+    float: left;
+}
+.box{
+    width: 80%;
+    height: 50px;
+    background: oldlace;
+    margin: 25% auto;
+}
+.name{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+}
+
+.score,.state,.life{
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+}
+
+.btn{
+    width: 80%;
+    height: 50px;
+    background: green;
+    border-radius: 20px;
+    margin: 25% auto;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    cursor: default;
+}
+
+.start{
+    background: green;
+}
+
+.pause{
+    background: yellow;
+}
+
+.phb{
+    background: #333;
+}
+
+ul{
+    display: none;
+}
+
+ul li{
+    width: 100%;
+    height: 30px;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    border-bottom: 1px dashed #ccc;
+}
+
+ul li span{
+    display: block;
+    width: 50%;
+    float: left;
+}
+
+.letter{
+    width: 80px;
+    height: 80px;
+    border:1px solid red;
+    font-size: 30px;
+    text-align: center;
+    line-height: 80px;
+    position: absolute;
+}
+

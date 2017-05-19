@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>待办事项</title>
+    <link rel="stylesheet" href="css/iconfont.css">
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            border: 0;
+            padding: 0;
+            list-style: none;
+            outline: none;
+        }
+        html,body{
+            height: 100%;
+            margin:0;
+            font-family: "微软雅黑";
+            font-size: 20px;
+            color: #fff;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title{
+            width: 100%;height:100px;
+            background: orange;
+            padding-left: 30px;
+            line-height: 100px;
+        }
+
+        .contentarea{
+            width: 100%;
+            height:50px;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        #text{
+            width: 200px;
+            height: 100%;
+            border: 1px solid #ccc;
+        }
+
+        #submit{
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 50px;
+            cursor: default;
+            user-select: none;
+        }
+
+        .show{
+            width: 100%;
+            flex-grow: 1;
+            background: #963;
+            padding: 0 5px;
+        }
+
+        .plan{
+            width: 49%;
+            height: 100%;
+            overflow: auto;
+            /*background: #369;*/
+            float: left;
+        }
+
+        .done{
+            width: 49%;
+            height: 100%;
+            overflow: auto;
+            /*background: #693;*/
+            float: right;
+        }
+
+        ul li{
+            height: auto;
+            /*border: 1px dashed #000;*/
+            margin-bottom: 5px;
+        }
+
+        ul li input{
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+        }
+
+        ul li time{
+            width: 30%;
+            float: right;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        .show-title{
+            width: 50%;
+            text-align: center;
+            /*background: coral;*/
+            float: left;
+            margin: 10px 0;
+        }
+
+        .iconfont{
+            font-size: 20px;
+            float: left;
+            line-height: 26px;
+            cursor: default;
+            user-select: none;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">TODO LIST</div>
+    <div class="contentarea">
+        <input type="text" id="text">
+        <input type="submit" id="submit" value="提交">
+    </div>
+    <div class="show">
+        <div class="show-title">未完成</div>
+        <div class="show-title">已完成</div>
+        <ul class="plan">
+            <li>
+                <!--<input type="checkbox">-->
+                <div class="iconfont">&#xe60e;</div>
+                <span  contenteditable="true">小米</span>
+                <time>2017/05/03 16:30:56</time>
+            </li>
+        </ul>
+
+        <ul class="done">
+            <li>
+                <!--<input type="checkbox">-->
+                <div class="iconfont">&#xe649;</div>
+                <span>睡觉</span>
+                <time>2017/05/03 13:00:23</time>
+            </li>
+
+        </ul>
+    </div>
+</body>
+<script>
+    var text=document.querySelector("#text");
+    var submit=document.querySelector("#submit");
+    var plan=document.querySelector(".plan");
+    var done=document.querySelector(".done");
+    function getData(){
+        return localStorage.todo?JSON.parse(localStorage.todo):[];
+    }
+    function saveData(data){
+        localStorage.todo=JSON.stringify(data);
+    }
+    submit.onclick=function(){
+        if(text.value==""){
+            return;
+        }
+        var value=text.value;
+        text.value="";
+        var data=getData();
+        var date=new Date();
+        var time=date.getTime();
+        data.push({content:value,time,done:false});
+        saveData(data);
+        reWrite();
+    }
+
+    function time(t){
+        var date=new Date();
+        date.setTime(t);
+        /*return date.getFullYear()+"/"+(date.getMonth()+1)+"/"+date.getDay()+" "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();*/
+
+        var year=date.getFullYear();
+        var month=setZero(date.getMonth()+1);
+        var day=setZero(date.getDate());
+        var hours=setZero(date.getHours());
+        var minutes=setZero(date.getMinutes());
+        var secondes=setZero(date.getSeconds());
+        return year+"/"+month+"/"+day+" "+hours+":"+minutes+":"+secondes;
+    }
+
+    //判断是否要添加0
+    function setZero(num){
+        if(num<10){
+            return "0"+num;
+        }else{
+            return num;
+        }
+    }
+
+    function reWrite(){
+        var data=getData();
+        var str1="",str2="";
+        data.forEach(function(v,i){
+            if(!v.done){
+                str1+=`<li id=${i}><div class="iconfont" onclick="changestate(this)">&#xe60e;</div><!--<input type="checkbox" onfocus="changestate(this)">--><span  contenteditable="true" onblur="changeContent(this)">${v.content}</span><time>${time(v.time)}</time></li>`;
+            }else{
+                str2+=`<li id=${i}><div class="iconfont" onclick="deleteContent(this)">&#xe649;</div><!--<input type="checkbox" onfocus="deleteContent(this)">--><span>${v.content}</span><time>${time(v.time)}</time></li>`;
+            }
+        })
+        plan.innerHTML=str1;
+        done.innerHTML=str2;
+    }
+
+    reWrite();
+
+    function changestate(ele){
+        var id=ele.parentNode.id;
+        var data=getData();
+        data[id].done=true;
+        saveData(data)
+        reWrite();
+    }
+
+    function deleteContent(ele){
+        var id=ele.parentNode.id;
+        var data=getData();
+        data.splice(id,1);
+        saveData(data);
+        reWrite();
+    }
+
+    function changeContent(ele){
+        var id=ele.parentNode.id;
+        var value=ele.innerHTML;
+        var data=getData();
+        data[id].content=value;
+        saveData(data);
+        reWrite();
+    }
+</script>
+</html>

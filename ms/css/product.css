@@ -1,0 +1,416 @@
+.top{
+    width:100%;;
+    height:90px;
+    background: #131413;
+    float: left;
+    position: relative;
+}
+
+.logo{
+    width: 8.75%;
+    height:40px;
+    background: url('../img/index_03.png') center center no-repeat;
+    background-size: 100%;
+    margin-top: 25px;
+    margin-left: 9.4%;
+    float: left;
+}
+
+nav{
+    width: 100%;
+    height:43px;
+}
+
+nav ul.daohang{
+    width:65%;
+    height:100%;
+    float: right;
+    margin-right: 9.4%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.2%;
+}
+
+nav ul.daohang li{
+    width:auto;
+    height:100%;
+}
+
+nav ul.daohang li p{
+    text-align: center;
+    line-height: 20px;
+    font-family: "微软雅黑";
+    font-size: 20px;
+    color:#fff;
+}
+
+nav ul.daohang li span{
+    line-height: 12px;
+    font-family: "FZLTZHK";
+    color: #818182;
+}
+
+
+.background{
+    width:100%;
+    height: auto;
+    background: #FFFFFF;
+    overflow: hidden;
+}
+
+.con1{
+    width: 1200px;
+    height: auto;
+    overflow: hidden;
+    margin:0 auto;
+    padding-top: 12px;
+    padding-bottom: 110px;
+}
+
+.position{
+    width: auto;
+    font-size: 16px;
+    color: #444343;
+    overflow: hidden;
+}
+
+ul.main-title{
+    width: 976px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 30px;
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+ul.main-title li{
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+    color: #A3A3A3;
+    text-align: center;
+}
+
+ul.main-title li:first-child{
+    color: #000;
+    border-bottom: 1px solid #7F7F7F;
+}
+
+.line{
+    width: 100%;
+    height: 1px;
+    background: #BFBFBF;
+    margin-top: 20px;
+}
+
+.subcon{
+    width: 100%;
+    height: 500px;
+    margin-top: 20px;
+    border: 1px solid #DADADA;
+    padding: 60px 20px 0px 35px;
+}
+
+.subcon-left{
+    width: 382px;
+    height: 382px;
+    float: left;
+}
+
+.subcon-left img{
+    width: 100%;
+    height: 100%;
+}
+
+.subcon-right{
+    width: 640px;
+    height: 382px;
+    float: right;
+}
+
+.subcon-right-title{
+    width: 100%;
+    height: 30px;
+    font-size: 30px;
+    color: #000;
+    text-align: center;
+}
+
+.subcon-right-subtitle{
+    width: 100%;
+    height: 26px;
+    font-size: 26px;
+    color: #000;
+    margin-top: 28px;
+}
+
+.subcon-right-subtext{
+    width: 100%;
+    height: 90px;
+    font-size: 20px;
+    color: #000;
+    margin-top: 28px;
+}
+
+.value{
+    margin-top: 48px;
+}
+
+.subcon-left-2{
+    float: left;
+}
+
+.subcon-right2{
+    float: right;
+}
+
+.page{
+    width:680px;
+    height: 58px;
+    margin-top: 54px;
+
+    font-size: 22px;
+    color: #585858;
+    text-align: center;
+    line-height: 58px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagebtn{
+    width: 105px;
+    height: 100%;
+    background: #fff;
+    border:1px solid #A6A6A6;
+}
+
+.subpage{
+    width: 58px;
+    height: 58px;
+    background: #fff;
+    border:1px solid #A6A6A6;
+}
+
+.subpage:nth-child(3){
+    background: #EEEEEE;
+}
+
+.com{
+    width: 100%;
+    height: 18px;
+    margin-top: 60px;
+    font-size: 18px;
+    text-align: center;
+    position: relative;
+}
+
+.leftline,.rightline{
+    width: 414px;
+    height: 1px;
+    background: #C3C3C3;
+    line-height: 18px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    margin: auto;
+}
+
+.leftline{
+    left:0;
+}
+
+.rightline{
+    right:0;
+}
+
+ul.com-text{
+    width: 1084px;
+    height: 68px;
+    margin:0 auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content:space-between;
+}
+
+ul.com-text li{
+    width: 280px;
+    height: 100%;
+    float: left;
+}
+
+.com-text-left{
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    border: 2px solid #FF0000;
+    background: #fff;
+
+    font-size: 28px;
+    color: #ff0000;
+    text-align: center;
+    line-height: 68px;
+
+    float: left;
+}
+
+.com-text-right{
+    width: 160px;
+    height: 43px;
+    margin-top: 12px;
+    margin-left: 16px;
+    float: left;
+}
+
+.com-text-right-top{
+    width: 100%;
+    height: 16px;
+    font-size: 16px;
+    color: #000;
+}
+
+.com-text-right-bottom{
+    width: 100%;
+    height: 16px;
+    font-size: 16px;
+    color: #A3A3A3;
+    margin-top: 12px;
+}
+
+footer{
+    width: 100%;
+    height: 546px;
+    /*overflow: hidden;*/
+    background: #0F0E0E;
+}
+
+.footer-box{
+    width: 1200px;
+    height: 440px;
+    margin:0 auto;
+    overflow: hidden;
+}
+
+.footer-left{
+    width: 545px;
+    height: auto;
+    overflow: hidden;
+    padding-left: 18px;
+    padding-top: 60px;
+    float: left;
+}
+
+.footer-left-top{
+    width: 140px;height: 42px;
+    background: url('../img/index_03.png');
+}
+
+.footer-left-bottom{
+    width: 526px;
+    height: 135px;
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-left-bottom li{
+    width: auto;
+    height: 100%;
+    overflow: hidden;
+}
+
+.footer-title{
+    font-size: 18px;
+    color: #878787;
+}
+
+.footer-text{
+    font-size: 14px;
+    color: #4E4E4E;
+    margin-top: 25px;
+    line-height: 30px;
+}
+
+.footer-right{
+    width: 382px;
+    height: 380px;
+    float: right;
+    margin-top: 130px;
+}
+
+.footer-right-title{
+    width: 100%;
+    font-size: 18px;
+    color: #808080;
+}
+
+.firstbox{
+    width: 100%;
+    height: 34px;
+    margin-top: 18px;
+}
+
+.name{
+    width: 164px;
+    height: 100%;
+    background: #201F1F;
+    float: left;
+    padding-left: 15px;
+}
+
+.tel{
+    width: 209px;
+    height: 100%;
+    background: #201F1F;
+    float: right;
+    padding-left: 15px;
+}
+
+.address{
+    width: 100%;
+    height: 34px;
+    background: #201F1F;
+    padding-left: 15px;
+    margin-top: 15px;
+}
+
+.content{
+    width: 100%;
+    height: 98px;
+    background: #201F1F;
+    padding-left: 15px;
+    margin-top: 15px;
+}
+
+.submit{
+    width: 140px;
+    height: 50px;
+    background: #3C3314;
+    font-size: 20px;
+    color: #D0CAB7;
+    text-align: center;
+    line-height: 50px;
+    float: right;
+    margin-top: 30px;
+}
+
+.line{
+    width: 100%;
+    height: 1px;
+    background: #383838;
+    margin-top: 30px;
+}
+
+.bottom{
+    width: 698px;
+    height: 38px;
+    margin:0 auto;
+    margin-top: 20px;
+
+    font-size: 14px;
+    color: #6C6C6C;
+    text-align: center;
+}
