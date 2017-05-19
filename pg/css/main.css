@@ -1,3 +1,7 @@
+body{
+	overflow-x:hidden;
+}
+
 .header-main{
 	width: 100%;
 	height: 40px;
@@ -670,30 +674,30 @@ header nav main ul li{
 
 	.content-small li:nth-child(1){
 		background-image: url('../img/apple_small.jpg');
-		/* background-position: center center;
+		background-position: center center;
 		background-size: cover;
-		background-repeat: no-repeat; */
+		background-repeat: no-repeat;
 	}
 
 	.content-small li:nth-child(2){
 		background-image: url('../img/apple3_small.jpg');
-		/* background-position: center center;
+		background-position: center center;
 		background-size: cover;
-		background-repeat: no-repeat; */
+		background-repeat: no-repeat;
 	}
 
 	.content-small li:nth-child(3){
 		background-image: url('../img/apple2_small.jpg');
-		/* background-position: center center;
+		background-position: center center;
 		background-size: cover;
-		background-repeat: no-repeat; */
+		background-repeat: no-repeat;
 	}
 
 	.content-small li:nth-child(4){
 		background-image: url('../img/apple1_small.jpg');
-		/* background-position: center center;
+		background-position: center center;
 		background-size: cover;
-		background-repeat: no-repeat; */
+		background-repeat: no-repeat;
 		border-right: 0px;
 	}
 
